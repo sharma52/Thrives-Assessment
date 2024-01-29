@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+#app {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+#content {
+    display: flex;
+    justify-content: space-between;
+}
+#metrics {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+/* 
+#content {
+    display: flex;
+    justify-content: space-between;
+} */
+@media screen {
+    
+}
+#container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#tableContainer,
+#chartContainer {
+    flex: 1 0 40%; /* Set the width to 40% for both containers */
+}
+
+#departmentTable {
+    width: 48%;
+    border-collapse: collapse;
+}
+
+.chart {
+    width: 48%; /* Set the chart width to 100% within its container */
+    max-width: 200px;
+    height: 200px; /* Reduce the height of the chart */
+}
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* .chart {
+    flex: 1 0 50%;
+    width: 48%;
+    height: 200px;
+
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+#tabs {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #7673732d; /* Adds a line under the button division */
+}
+
+.tab {
+    background-color: transparent; /* Removes the background */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: bold; /* Makes the text bold */
+}
+
+.tab.active {
+    color: blue;
+    border-bottom: 2px solid blue; /* Highlights the active button */
+}
+
+#metrics {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.metric {
+    width: 16%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon.total {
+    background-image: url('person.jpg');
+    background-color: blue;
+}
+.icon.yet-to-start{
+    background-image: url('time.jpg');
+    background-color: blue;
+}
+.icon.in-progress{
+    background-image: url('timer.jpg');
+    background-color: blue;
+}
+.icon.completed{
+    background-image: url('score.jpg');
+    background-color: blue;
+}
+.icon.average-progress{
+    background-image: url('percent.jpg');
+    background-color: blue;
+}
+.icon.average-time{
+    background-image: url('check.jpg');
+    background-color: #ddd;
+}
+/* Add the rest of your icons here */
+
+.value {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.description {
+    color: #888;
+    margin-top: 10px;
+}
+    </style>
+
+</head>
+<body>
+    <div id="app">
+        <h1>Corporate Conflict of Interest</h1>
+        <div id="dashboard">
+            <div id="tabs">
+                <button class="tab">Report</button>
+                <button class="tab active">User Progress</button>
+            </div>
+            <div id="metrics">
+                <div class="metric">
+                    <div class="icon total"></div>
+                    <div class="value">1.1K</div>
+                    <div class="description">Total Enrollments</div>
+                </div>
+                <div class="metric">
+                    <div class="icon yet-to-start"></div>
+                    <div class="value">15</div>
+                    <div class="description">Yet to Start</div>
+                </div>
+                <div class="metric">
+                    <div class="icon in-progress"></div>
+                    <div class="value">50</div>
+                    <div class="description">In-Progress</div>
+                </div>
+                <div class="metric">
+                    <div class="icon completed"></div>
+                    <div class="value">108</div>
+                    <div class="description">Completed</div>
+                </div>
+                <div class="metric">
+                    <div class="icon average-progress"></div>
+                    <div class="value">75%</div>
+                    <div class="description">Average Progress</div>
+                </div>
+                <div class="metric">
+                    <div class="icon average-time"></div>
+                    <div class="value">42 Min</div>
+                    <div class="description">Average Spend Time</div>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <label for="departments">Select a Department:</label>
+            <select id="departments"></select>
+        </div>
+        <div id="container" >
+        <table id="departmentTable">
+            <thead>
+                <tr>
+                    <th>Department</th>
+                    <th>Completion %</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <canvas id="chart"></canvas>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
